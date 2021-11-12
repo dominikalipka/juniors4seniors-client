@@ -27,6 +27,7 @@ class AddSenior extends React.Component {
           })
           .then(() => {
             this.props.getData();
+            this.props.handleClickButton();
             this.setState({
               name: "",
               location: "",

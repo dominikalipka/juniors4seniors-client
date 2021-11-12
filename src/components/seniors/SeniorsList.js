@@ -7,7 +7,7 @@ import AddSenior from "./AddSenior";
 class SeniorsList extends React.Component {
   state = {
     seniorsList: [],
-    buttonClicked: false,
+    buttonForFormClicked: false,
   };
 
   getAllSeniors = () => {
@@ -18,7 +18,9 @@ class SeniorsList extends React.Component {
   };
 
   handleClickButton = () => {
-    this.setState((prevState) => ({ buttonClicked: !prevState.buttonClicked }));
+    this.setState((prevState) => ({
+      buttonForFormClicked: !prevState.buttonForFormClicked,
+    }));
   };
 
   componentDidMount() {
@@ -33,7 +35,9 @@ class SeniorsList extends React.Component {
               <div key={senior._id}>
                 <h3>{senior.name}</h3>
                 <h4>{senior.location}</h4>
-                <Link to={`/seniors/${senior._id}`}><p>Read more</p></Link>
+                <Link to={`/seniors/${senior._id}`}>
+                  <p>Read more</p>
+                </Link>
               </div>
             );
           })}
@@ -41,8 +45,11 @@ class SeniorsList extends React.Component {
         <div>
           <button onClick={this.handleClickButton}>Add new senior</button>
           <div>
-            {this.state.buttonClicked === true ? (
-              <AddSenior getData={() => this.getAllSeniors()} />
+            {this.state.buttonForFormClicked === true ? (
+              <AddSenior
+                handleClickButton={() => this.handleClickButton()}
+                getData={() => this.getAllSeniors()}
+              />
             ) : (
               <div></div>
             )}
