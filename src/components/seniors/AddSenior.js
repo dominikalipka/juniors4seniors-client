@@ -5,7 +5,8 @@ class AddSenior extends React.Component {
     state = {
         name: '',
         location: '',
-        contact: ''
+        contact: '',
+        image:''
     }
 
     handleChange = (event) => {
@@ -18,12 +19,14 @@ class AddSenior extends React.Component {
         const name = this.state.name;
         const location = this.state.location;
         const contact = this.state.contact;
+        const image = this.state.image
 
         axios
           .post(`http://localhost:5005/api/seniors`, {
             name,
             location,
             contact,
+            image
           })
           .then(() => {
             this.props.getData();
@@ -32,6 +35,7 @@ class AddSenior extends React.Component {
               name: "",
               location: "",
               contact: "",
+              image: ''
             });
           })
           .catch((error) => console.log(error));
@@ -43,8 +47,9 @@ class AddSenior extends React.Component {
           <div>
             <form onSubmit={this.handleFormSubmit}>
               <label>
-                Name:
+                
                 <input
+                  placeholder="Name"
                   required
                   type="text"
                   name="name"
@@ -53,8 +58,8 @@ class AddSenior extends React.Component {
                 />
               </label>
               <label>
-                Location:
                 <input
+                  placeholder="Location"
                   required
                   type="text"
                   name="location"
@@ -63,8 +68,8 @@ class AddSenior extends React.Component {
                 />
               </label>
               <label>
-                Contact:
                 <input
+                  placeholder="Contact"
                   required
                   type="text"
                   name="contact"
@@ -72,8 +77,18 @@ class AddSenior extends React.Component {
                   onChange={(e) => this.handleChange(e)}
                 />
               </label>
+              <label>
+                <input
+                  placeholder="Image"
+                  required
+                  type="text"
+                  name="image"
+                  value={this.state.image}
+                  onChange={(e) => this.handleChange(e)}
+                />
+              </label>
 
-              <button>SUBMIT</button>
+              <button className="square-button-small">SUBMIT</button>
             </form>
           </div>
         );

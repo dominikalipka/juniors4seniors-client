@@ -4,8 +4,101 @@ body {
   margin: 0;
 }
 
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
 .App {
   text-align: center;
+}
+
+/* >>>>>>>>>>>>>>> GENERAL STYLES <<<<<<<<<<<<<<< */
+
+.webpage-title {
+  background-color: #f7cc77;
+  padding: 1rem;
+  font-weight: 200;
+  font-size: 3rem;
+  margin-top: 0;
+  text-shadow: 1px 1px #f7cc77;
+}
+
+.form-button {
+  transition: 0.2s;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 0.7rem 2.5rem;
+  color: white;
+  border: 1px solid #a26360;
+  border-radius: 2rem;
+  background: rgb(162, 99, 96);
+}
+
+.form-button:hover {
+  transition: 0.2s;
+  color: #a26360;
+  background-color: white;
+}
+
+.square-button {
+  transition: 0.3s;
+  font-size: 1.5rem;
+  font-weight: 300;
+  width: fit-content;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  box-shadow: 5px 5px #f7cc77;
+}
+
+.square-button:hover {
+  transition: 0.3s;
+  background-color: #f7cc77;
+  box-shadow: none;
+}
+
+.square-button-small {
+  transition: 0.3s;
+  font-size: 1.1rem;
+  font-weight: 300;
+  width: fit-content;
+  margin: 1rem 0;
+  padding: 0.4rem 1.5rem;
+  background-color: white;
+  box-shadow: 5px 5px #f7cc77;
+}
+
+.square-button-small:hover {
+  transition: 0.3s;
+  background-color: #f7cc77;
+  box-shadow: none;
+}
+
+form {
+  margin:1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin: 0.5rem
+}
+
+input {
+  font-size: 1.2rem;
+  font-weight: 300;
+  width: 30vw;
+  margin: 0 0.5rem;
+  padding: 0.3rem 1rem;
+  border: 1px solid #a26360;
+  border-radius: 2rem;
+}
+
+.increase-bottom-margin {
+  margin-bottom: 2rem;
 }
 
 /* >>>>>>>>>>>>>> NAVBAR <<<<<<<<<<<<<< */
@@ -15,7 +108,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #a26360;
+  /* background-color: #a26360; */
 }
 
 nav div {
@@ -23,10 +116,18 @@ nav div {
 }
 
 .logo {
-  font-size: 1.3rem;
-  font-weight: 800;
-  font-family: "Candal", sans-serif;
-  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: candal;
+  color: #a26360;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo img {
+  width: 3rem;
+  margin-right: 1rem;
 }
 
 nav ul {
@@ -42,51 +143,61 @@ nav ul li {
 }
 
 nav ul li a {
+  transition: 0.3s;
   padding: 0.5rem 1rem;
   font-size: 1.3rem;
-  color: white;
+  font-weight: 300;
+  color: black;
 }
 
 nav ul li a:hover {
   transition: 0.3s;
-  background-color: #8f5754;
+  background-color: #f7cc77;
 }
 
 /* >>>>>>>>>>>>> HOMEPAGE <<<<<<<<<<<< */
 
-.homepage-part-one {  
+.homepage-part-one {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.homepage-part-one div{
+.homepage-part-one div {
+  margin: 2rem;
   width: 50vw;
 }
 
 .homepage-part-one div img {
-  max-width: 55vw;
+  max-width: 50vw;
+  box-shadow: 10px 10px #f7cc77;
 }
 
 .welcome {
+  max-height: 100vh;
   width: 40vw;
-  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
-.homepage-part-one h2,
-.homepage-part-one p {
-  color: black;
+.welcome h2 {
+  font-weight: 100;
+  font-size: 3rem;
   text-align: center;
+}
+
+.welcome p {
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
 }
 
 .homepage-part-two {
   padding: 2rem;
   background-color: #a26360;
   color: white;
-
 }
 
 .homepage-part-two > div {
@@ -115,5 +226,98 @@ nav ul li a:hover {
   margin: 0;
   font-size: 3rem;
   font-weight: 200;
-  padding:  1rem;
+  padding: 1rem;
+}
+
+/* >>>>>>>>>>> SENIORS LIST <<<<<<<<<<<< */
+
+.seniors-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.seniors-list-container div {
+  max-width: 30vw;
+  margin: 2rem 1rem;
+}
+
+.seniors-list-container img {
+  width: 25vw;
+}
+
+.seniors-list-container h3 {
+  font-size: 1.8rem;
+  font-weight: 200;
+  padding: 0.5rem 0;
+  margin: 0.2rem;
+}
+
+.seniors-list-container h4 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 0.4rem;
+}
+
+.seniors-list-container p {
+  transition: 0.3s;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 300;
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  box-shadow: 5px 5px #f7cc77;
+  border: black 1px solid;
+}
+
+.seniors-list-container p:hover {
+  transition: 0.3s;
+  background-color: #f7cc77;
+  box-shadow: none;
+}
+
+/* >>>>>>>>>>>>> SENIOR PROFILE <<<<<<<<<<<<< */
+
+.senior-profile-container {
+  margin: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.senior-profile-container div {
+  width: 40vw;
+  text-align: start;
+}
+
+.senior-profile-container img {
+  max-height: 60vh;
+  box-shadow: #f7cc77 6px 6px;
+}
+
+.senior-profile-container h2{
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.senior-profile-container h4 {
+  font-weight: 200;
+  font-size: 1.5rem;
+  margin: 1.5rem 0
+}
+
+.senior-profile-need {
+  font-weight: 200;
+  font-size: 1.2rem;
+  color: black;
+  border: 1px solid #f7cc77;
+  padding: 0.3rem 1rem;
+  margin: 1rem 0 
+}
+
+.senior-profile-need a {
+  color: black;
 }

@@ -13,10 +13,17 @@ function Homepage () {
             <img src={oldWomenImg} alt="" />
           </div>
           <div className="welcome">
-              <h2>Some text about the website</h2>
-              <p>button to login</p>
-              <p>button to signup</p>
-
+            <h2>Welcome!</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              sit amet tristique mi, vel congue diam. Curabitur ac rutrum magna,
+              quis mollis nisl. Phasellus porta, lacus lacinia cursus efficitur,
+              est sem commodo arcu, id porta urna nulla in risus. Vestibulum
+              vitae erat sit amet nisi dignissim fermentum. Sed at pharetra ex,
+              quis tristique neque. Integer lacinia non urna quis laoreet.{" "}
+            </p>
+            <button className="square-button">LOG IN</button>
+            <button className="square-button">SIGN UP</button>
           </div>
         </div>
         <div className="homepage-part-two">
@@ -32,10 +39,12 @@ function Homepage () {
             </div>
             <div className="homepage-part-two-container">
               <img src={homepage3} alt="" />
-              <h4>Share, share, share</h4>
+              <h4>Share, care, love</h4>
             </div>
           </div>
         </div>
+        <div className="homepage-part-three"></div>
+        <div className="homepage-part-four"></div>
       </div>
     );
 }

@@ -20,11 +20,10 @@ class AddNeed extends React.Component {
     if (this.state.buttonForFormClicked) {
       return (
         <div>
-          <h3>Add new need:</h3>
           <form onSubmit={this.handleFormSubmit}>
             <label>
-              Title:
               <input
+                placeholder="Title"
                 required
                 type="text"
                 name="title"
@@ -33,8 +32,8 @@ class AddNeed extends React.Component {
               />
             </label>
             <label>
-              Description:
               <input
+                placeholder="Description"
                 required
                 type="text"
                 name="description"
@@ -42,7 +41,7 @@ class AddNeed extends React.Component {
                 onChange={(e) => this.handleChange(e)}
               />
             </label>
-            <button>ADD</button>
+            <button className="square-button-small">Submit</button>
           </form>
         </div>
       );
@@ -76,7 +75,9 @@ class AddNeed extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.toggleForm()}>Add new need</button>
+        <button className="square-button-small" onClick={() => this.toggleForm()}>
+          Add new need
+        </button>
         {this.showAddNeedForm()}
       </div>
     );

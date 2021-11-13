@@ -29,21 +29,9 @@ class SeniorsList extends React.Component {
   render() {
     return (
       <div>
+        <h2 className="webpage-title">Seniors in need</h2>
         <div>
-          {this.state.seniorsList.map((senior) => {
-            return (
-              <div key={senior._id}>
-                <h3>{senior.name}</h3>
-                <h4>{senior.location}</h4>
-                <Link to={`/seniors/${senior._id}`}>
-                  <p>Read more</p>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-        <div>
-          <button onClick={this.handleClickButton}>Add new senior</button>
+          <button className='form-button' onClick={this.handleClickButton}>Add new senior</button>
           <div>
             {this.state.buttonForFormClicked === true ? (
               <AddSenior
@@ -54,6 +42,23 @@ class SeniorsList extends React.Component {
               <div></div>
             )}
           </div>
+        </div>
+        <div className="seniors-list-container">
+          {this.state.seniorsList.map((senior) => {
+            return (
+              <div key={senior._id}>
+                <img src={senior.image} alt="" />
+                <h3>{senior.name}</h3>
+                <h4>{senior.location}</h4>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/seniors/${senior._id}`}
+                >
+                  <p className='square-button'>Read more</p>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
