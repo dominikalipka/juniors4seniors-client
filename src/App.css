@@ -42,7 +42,8 @@ body {
   background-color: white;
 }
 
-.square-button {
+.square-button{
+
   transition: 0.3s;
   font-size: 1.5rem;
   font-weight: 300;
@@ -51,6 +52,10 @@ body {
   padding: 0.5rem 2rem;
   background-color: white;
   box-shadow: 5px 5px #f7cc77;
+}
+
+button a {
+    color: black;
 }
 
 .square-button:hover {
@@ -142,7 +147,7 @@ nav ul li {
   padding: 0 1rem;
 }
 
-nav ul li a {
+nav ul li a, button {
   transition: 0.3s;
   padding: 0.5rem 1rem;
   font-size: 1.3rem;
@@ -152,6 +157,19 @@ nav ul li a {
 
 nav ul li a:hover {
   transition: 0.3s;
+  background-color: #f7cc77;
+}
+
+.nav-auth {
+  transition: 0s;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  padding: 0
+}
+
+.nav-auth:hover {
+  transition: 0.5s;
   background-color: #f7cc77;
 }
 
@@ -296,6 +314,7 @@ nav ul li a:hover {
 .senior-profile-container img {
   max-height: 60vh;
   box-shadow: #f7cc77 6px 6px;
+  margin:1rem 0
 }
 
 .senior-profile-container h2{
@@ -320,4 +339,10 @@ nav ul li a:hover {
 
 .senior-profile-need a {
   color: black;
+}
+
+.center-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
