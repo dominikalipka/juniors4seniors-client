@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import oldWomenImg from ".././images/old-women.png";
 import homepage1 from ".././images/homepage-1.png";
 import homepage2 from ".././images/homepage-2.png";
 import homepage3 from ".././images/homepage-3.png";
+
 
 function Homepage () {
     return (
@@ -22,8 +24,14 @@ function Homepage () {
               vitae erat sit amet nisi dignissim fermentum. Sed at pharetra ex,
               quis tristique neque. Integer lacinia non urna quis laoreet.{" "}
             </p>
-            <button className="square-button">LOG IN</button>
-            <button className="square-button">SIGN UP</button>
+
+            <Link style={{ textDecoration: "none" }} to="/signup">
+              <button className="square-button">SIGN UP</button>
+            </Link>
+
+            <Link style={{ textDecoration: "none" }} to="/login">
+              <button className="square-button">LOG IN</button>
+            </Link>
           </div>
         </div>
         <div className="homepage-part-two">

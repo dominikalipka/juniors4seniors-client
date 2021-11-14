@@ -8,6 +8,7 @@ import SeniorsList from "./components/seniors/SeniorsList";
 import React from "react";
 import SeniorProfile from "./components/seniors/SeniorProfile";
 import NeedDetails from "./components/needs/NeedDetails";
+import UserProfile from "./components/auth/UserProfile";
 
 import authService from "./components/auth/auth-service";
 import Signup from "./components/auth/Signup";
@@ -75,12 +76,21 @@ class App extends React.Component {
           <Route
             exact
             path="/seniors/:id"
-            render={(props) => <SeniorProfile {...props} currentUser={this.state.user} />}
+            render={(props) => (
+              <SeniorProfile {...props} currentUser={this.state.user} />
+            )}
           ></Route>
           <Route
             exact
             path="/seniors/:id/needs/:needId"
             component={NeedDetails}
+          ></Route>
+          <Route
+            exact
+            path="/account"
+            render={(props) => (
+              <UserProfile {...props} currentUser={this.state.user} />
+            )}
           ></Route>
         </Switch>
       </div>

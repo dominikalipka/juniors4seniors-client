@@ -22,7 +22,7 @@ class SeniorProfile extends React.Component {
   };
 
   assignUserToSenior = () => {
-    console.log(this.props.currentUser._id);
+    console.log(this.props.currentUser);
     const helper = this.props.currentUser._id
     const { params } = this.props.match;
 
