@@ -62,7 +62,7 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          {this.state.message ? (<p className='error-msg'>{this.state.message}</p>) : <p></p>}
+          {this.state.message && <p className='error-msg'>{this.state.message}</p>}
           <button type="submit"> Signup </button>
         </form>
 

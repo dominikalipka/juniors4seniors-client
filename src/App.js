@@ -28,14 +28,23 @@ class App extends React.Component {
   };
 
   fetchUser = () => {
-    if (this.state.user) {
+    if (this.state.user === null) {
       authService
         .loggedin()
         .then((data) => {
-          this.setState({
-            user: data,
-            isLoggedIn: true,
-          });
+          console.log(data )
+          if (data) {
+            this.setState({
+              user: data,
+              isLoggedIn: true,
+            });
+          } else {
+            this.setState({
+              user: null,
+              isLoggedIn: false,
+            });
+          }
+          
         })
         .catch((err) => {
           this.setState({
@@ -71,7 +80,7 @@ class App extends React.Component {
             render={(props) => <Login {...props} getUser={this.getTheUser} />}
           />
           <Route exact path="/seniors">
-            <SeniorsList />
+            <SeniorsList userIsLoggedIn={this.state.isLoggedIn} />
           </Route>
           <Route
             exact

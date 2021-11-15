@@ -5,7 +5,7 @@ import authService from "./auth-service";
 import { Link } from "react-router-dom";
 
 class Login extends Component {
-  state = { username: "", password: "" };
+  state = { username: "", password: "", errorMsg:'' };
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -19,10 +19,19 @@ class Login extends Component {
     authService
       .login(username, password)
       .then((response) => {
-        this.setState({ username: "", password: "" });
-        this.props.getUser(response, true);
+        this.setState({ username: "", password: "", errorMsg: null });
+        if (response) {
+          this.props.getUser(response, true);
+          this.props.history.push("/account");
+        } else {
+          console.log("login didnt work");
+          console.log(response);
+          this.setState({ errorMsg: 'Wrong credentials, try again.' });
+        }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
@@ -32,7 +41,7 @@ class Login extends Component {
           <label>
             Username:
             <input
-            required
+              required
               type="text"
               name="username"
               value={this.state.username}
@@ -43,14 +52,16 @@ class Login extends Component {
           <label>
             Password:
             <input
-            required
+              required
               type="password"
               name="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
           </label>
-
+          {this.state.errorMsg && (
+            <p className="error-msg">{this.state.errorMsg}</p>
+          )}
           <button type="submit"> Login </button>
         </form>
 
