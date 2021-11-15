@@ -36,7 +36,7 @@ class SeniorsList extends React.Component {
               Add new senior
             </button>
           ) : (
-            <div>Dear user, if you want help seniors, please log in.</div>
+            <div><p className='error-msg'>In order to read more information about seniors, please log in.</p></div>
           )}
 
           <div>
