@@ -31,7 +31,14 @@ class SeniorsList extends React.Component {
       <div>
         <h2 className="webpage-title">Seniors in need</h2>
         <div>
-          <button className='form-button' onClick={this.handleClickButton}>Add new senior</button>
+          {this.props.userIsLoggedIn === true ? (
+            <button className="form-button" onClick={this.handleClickButton}>
+              Add new senior
+            </button>
+          ) : (
+            <div>Dear user, if you want help seniors, please log in.</div>
+          )}
+
           <div>
             {this.state.buttonForFormClicked === true ? (
               <AddSenior
@@ -50,12 +57,16 @@ class SeniorsList extends React.Component {
                 <img src={senior.image} alt="" />
                 <h3>{senior.name}</h3>
                 <h4>{senior.location}</h4>
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={`/seniors/${senior._id}`}
-                >
-                  <p className='square-button'>Read more</p>
-                </Link>
+                {this.props.userIsLoggedIn === true ? (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/seniors/${senior._id}`}
+                  >
+                    <p className="square-button">Read more</p>
+                  </Link>
+                ) : (
+                  <div></div>
+                )}
               </div>
             );
           })}
