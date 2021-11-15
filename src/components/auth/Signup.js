@@ -7,6 +7,7 @@ class Signup extends React.Component {
   state = {
     username: "",
     password: "",
+    message: ''
   };
 
   handleChange = (event) => {
@@ -27,7 +28,13 @@ class Signup extends React.Component {
         });
         this.props.getUser(response, true);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+           this.setState({
+            message:
+              "Password needs to have at least 8 characters and must contain at least one number, one lowercase and one uppercase letter. Username must be unique.",
+          });
+        console.log(error);
+      });
   };
 
   render() {
@@ -37,6 +44,7 @@ class Signup extends React.Component {
           <label>
             Username:
             <input
+              required
               type="text"
               name="username"
               value={this.state.username}
@@ -47,13 +55,14 @@ class Signup extends React.Component {
           <label>
             Password:
             <input
+              required
               type="password"
               name="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
           </label>
-
+          {this.state.message ? (<p className='error-msg'>{this.state.message}</p>) : <p></p>}
           <button type="submit"> Signup </button>
         </form>
 
