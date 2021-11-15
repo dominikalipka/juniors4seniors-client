@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Footer from "./Footer";
+
 import oldWomenImg from ".././images/old-women.png";
 import homepage1 from ".././images/homepage-1.png";
 import homepage2 from ".././images/homepage-2.png";
@@ -51,8 +53,9 @@ function Homepage () {
             </div>
           </div>
         </div>
-        <div className="homepage-part-three"></div>
-        <div className="homepage-part-four"></div>
+        <div className="homepage-part-three">
+          <Footer></Footer>
+        </div>
       </div>
     );
 }
