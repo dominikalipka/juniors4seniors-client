@@ -3,6 +3,8 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
 import SeniorsList from "./components/seniors/SeniorsList";
 import React from "react";
@@ -101,7 +103,9 @@ class App extends React.Component {
               <UserProfile {...props} currentUser={this.state.user} />
             )}
           ></Route>
+          <Route exact path="/about" component={About}></Route>
         </Switch>
+        
       </div>
     );
   }

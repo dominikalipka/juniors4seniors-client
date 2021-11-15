@@ -14,7 +14,7 @@ class Navbar extends React.Component {
   render() {
     const { userData, userIsLoggedIn } = this.props;
 
-    if (userIsLoggedIn === true) {
+    if (userData !== null && userData !== undefined) {
       return (
         <nav>
           <Link to="/" style={{ textDecoration: "none" }}>
@@ -30,7 +30,6 @@ class Navbar extends React.Component {
                   Home
                 </Link>
               </li>
-
               <li>
                 <Link to="/seniors" style={{ textDecoration: "none" }}>
                   Seniors in need
@@ -68,7 +67,11 @@ class Navbar extends React.Component {
                   Home
                 </Link>
               </li>
-
+              <li>
+                <Link to="/about" style={{ textDecoration: "none" }}>
+                  How it works
+                </Link>
+              </li>
               <li>
                 <Link to="/seniors" style={{ textDecoration: "none" }}>
                   Seniors in need
