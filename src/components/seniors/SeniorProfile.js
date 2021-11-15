@@ -18,7 +18,7 @@ class SeniorProfile extends React.Component {
       })
       .catch((err) => {
         console.log(err);
-      });
+      });      
   };
 
   assignUserToSenior = () => {
@@ -44,12 +44,16 @@ class SeniorProfile extends React.Component {
         <div className="senior-profile-container">
           <div className="center-div">
             <img src={this.state.image} alt="" />
-            <button
-              onClick={() => this.assignUserToSenior()}
-              className="square-button"
-            >
-              I want to help
-            </button>
+            {this.state.helper ? (
+              <p></p>
+            ) : (
+              <button
+                onClick={() => this.assignUserToSenior()}
+                className="square-button"
+              >
+                I want to help
+              </button>
+            )}
           </div>
           <div>
             <h2>{this.state.name}</h2>
