@@ -58,26 +58,36 @@ class NeedDetails extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <h3>{this.state.title}</h3>
-          <p>{this.state.description}</p>
-          <button onClick={this.handleClickButton}>Edit need</button>
-          {this.state.buttonForFormClicked === true ? (
-            <EditNeed
-              handleClickButton={() => this.handleClickButton()}
-              theNeed={this.state}
-              getData={() => this.getNeed()}
-              {...this.props}
-            />
-          ) : (
-            <div></div>
-          )}
-          <button onClick={() => this.deleteNeed(this.state._id)}>
-            Delete need
-          </button>
+        <div className="need-container">
+          <h3 className="webpage-subtitle">Need: {this.state.title}</h3>
+          <p>Details: {this.state.description}</p>
+          <div className="need-btns">
+            <button
+              className="square-button-small"
+              onClick={this.handleClickButton}
+            >
+              Edit need
+            </button>
+            {this.state.buttonForFormClicked === true ? (
+              <EditNeed
+                handleClickButton={() => this.handleClickButton()}
+                theNeed={this.state}
+                getData={() => this.getNeed()}
+                {...this.props}
+              />
+            ) : (
+              <div></div>
+            )}
+            <button
+              className="square-button-small"
+              onClick={() => this.deleteNeed(this.state._id)}
+            >
+              Delete need
+            </button>
+          </div>
         </div>
         <Link to={`/seniors/${this.props.match.params.id}`}>
-          Back to Senior
+          <button className="form-button">Back to Senior</button>
         </Link>
       </div>
     );

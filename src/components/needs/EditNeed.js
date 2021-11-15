@@ -37,7 +37,6 @@ class EditNeed extends React.Component {
     render() {
         return (
           <div>
-            <h4>Edit need:</h4>
             <form onSubmit={this.handleFormSubmit}>
               <label>
                 Title:
@@ -58,7 +57,7 @@ class EditNeed extends React.Component {
                   onChange={(e) => this.handleChange(e)}
                 />
               </label>
-              <button>Confirm changes</button>
+              <button >Confirm changes</button>
             </form>
           </div>
         );
