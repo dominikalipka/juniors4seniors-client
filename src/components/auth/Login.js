@@ -36,10 +36,10 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="center">
+        <h3>Login</h3>
         <form onSubmit={this.handleFormSubmit}>
-          <label>
-            Username:
+          <div className="txt-field">
             <input
               required
               type="text"
@@ -47,10 +47,10 @@ class Login extends Component {
               value={this.state.username}
               onChange={this.handleChange}
             />
-          </label>
-
-          <label>
-            Password:
+            <span></span>
+            <label>Username:</label>
+          </div>
+          <div className="txt-field">
             <input
               required
               type="password"
@@ -58,17 +58,20 @@ class Login extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
-          </label>
+            <span></span>
+            <label>Password:</label>
+          </div>
+
           {this.state.errorMsg && (
-            <p className="error-msg">{this.state.errorMsg}</p>
+            <p className="error-msg-auth">{this.state.errorMsg}</p>
           )}
           <button type="submit"> Login </button>
-        </form>
 
-        <p>
-          Don't have account?
-          <Link to={"/signup"}> Signup</Link>
-        </p>
+          <div className="signup-link">
+            Don't have an account?
+            <Link to={"/signup"}>Signup</Link>
+          </div>
+        </form>
       </div>
     );
   }

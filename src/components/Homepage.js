@@ -25,11 +25,11 @@ function Homepage () {
             <p>Join <b>juniors4seniors</b> and make world a better place today! </p>
 
             <Link style={{ textDecoration: "none" }} to="/signup">
-              <button className="square-button">SIGN UP</button>
+              <button className="square-button">Sign up</button>
             </Link>
 
             <Link style={{ textDecoration: "none" }} to="/login">
-              <button className="square-button">LOG IN</button>
+              <button className="square-button">Log in</button>
             </Link>
           </div>
         </div>

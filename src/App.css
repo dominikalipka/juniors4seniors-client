@@ -5,9 +5,7 @@ body {
 }
 
 * {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .App {
@@ -18,10 +16,20 @@ body {
 
 .error-msg {
   display: inline;
+  color: white;
   width: 50vw;
   font-size: 1.5rem;
+  font-weight: 600;
+  background-color: tomato;
+  padding: 0.5rem 1rem;
+}
+
+.error-msg-auth {
+  background: tomato;
+  max-width: 30vw;
+  color: white;
+  font-size: 1.5rem;
   font-weight: 200;
-  background-color: #f7cc77;
   padding: 0.5rem 1rem;
 }
 
@@ -43,7 +51,7 @@ body {
 .form-button {
   transition: 0.2s;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0.7rem 2.5rem;
   color: white;
   border: 1px solid #a26360;
@@ -57,20 +65,20 @@ body {
   background-color: white;
 }
 
-.square-button{
-
+.square-button {
   transition: 0.3s;
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.6rem;
+  font-weight: 400;
   width: fit-content;
   margin: 1rem;
   padding: 0.5rem 2rem;
   background-color: white;
+  border: 1px solid #f7cc77;
   box-shadow: 5px 5px #f7cc77;
 }
 
 button a {
-    color: black;
+  color: black;
 }
 
 .square-button:hover {
@@ -81,12 +89,13 @@ button a {
 
 .square-button-small {
   transition: 0.3s;
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 1.3rem;
+  font-weight: 400;
   width: fit-content;
   margin: 1rem 0;
   padding: 0.4rem 1.5rem;
   background-color: white;
+  border: 1px solid #f7cc77;
   box-shadow: 5px 5px #f7cc77;
 }
 
@@ -97,7 +106,7 @@ button a {
 }
 
 form {
-  margin:2rem;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +122,7 @@ input {
   font-size: 1.2rem;
   font-weight: 300;
   width: 30vw;
-  margin:  0.5rem;
+  margin: 0.5rem;
   padding: 0.3rem 1rem;
   border: 1px solid #a26360;
   border-radius: 2rem;
@@ -134,6 +143,121 @@ button:hover {
   margin-bottom: 2rem;
 }
 
+/* >>>>>>>>>>> SIGN UP & LOG IN<<<<<<<<<< */
+
+.center {
+  width: 40vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #bdd1c5;
+  border: 5px solid #7b8e82;
+  border-radius: 2rem;
+}
+
+.center h3 {
+  margin-bottom: 0;
+  font-size: 2.7rem;
+  color: white;
+  text-shadow: 3px 3px 2px #7b8e82;
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid white;
+}
+
+.center form {
+  margin: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.txt-field {
+  width: 90%;
+  position: relative;
+  border-bottom: 2px solid white;
+  margin: 1.5rem 0;
+}
+
+.txt-field input {
+  color: white;
+  font-weight: 400;
+  width: 100%;
+  padding: 0 0.5rem;
+  height: 2rem;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt-field label {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  text-align: start;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.txt-field span::before {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 0%;
+  transition: 0.3s;
+  height: 0.1rem;
+  background: #7b8e82;
+}
+
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label {
+  top: -75%;
+  color: #7b8e82;
+}
+
+.txt-field input:focus ~ span::before,
+.txt-field input:valid ~ span::before {
+  width: 100%;
+}
+
+.center button {
+  width: 90%;
+    background: #7b8e82;
+    border: 3px solid #7b8e82;
+    color: white;
+
+}
+
+.center button:hover {
+    border: 3px solid #7b8e82;
+    color: black;
+    background: white;
+
+}
+
+.signup-link {
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.signup-link a {
+  padding-left: 0.5rem;
+  text-decoration: underline white;
+  color: white;
+  transition: 0.2s;
+}
+
+.signup-link a:hover {
+  transition: 0.2s;
+  color: white;
+  text-decoration: underline white;
+}
+
 /* >>>>>>>>>>>>>> NAVBAR <<<<<<<<<<<<<< */
 
 nav {
@@ -149,7 +273,7 @@ nav div {
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: candal;
   color: #a26360;
@@ -175,10 +299,11 @@ nav ul li {
   padding: 0 1rem;
 }
 
-nav ul li a, button {
+nav ul li a,
+button {
   transition: 0.3s;
   padding: 0.5rem 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 300;
   color: black;
 }
@@ -193,7 +318,7 @@ nav ul li a:hover {
   text-decoration: none;
   border: none;
   background-color: white;
-  padding: 0
+  padding: 0;
 }
 
 .nav-auth:hover {
@@ -205,27 +330,26 @@ nav ul li a:hover {
 
 .about-me {
   width: 50vw;
-    margin: 2rem auto;
+  margin: 2rem auto;
   font-size: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.about-me a{
-  margin:0 1rem;
+.about-me a {
+  margin: 0 1rem;
   text-decoration: none;
   transition: 0.2s;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   padding: 0.7rem 2.5rem;
   color: black;
   border: 2px solid #f7cc77;
   border-radius: 2rem;
-
 }
 
-.about-me a:hover{
+.about-me a:hover {
   background-color: #f7cc77;
 }
 
@@ -265,7 +389,7 @@ nav ul li a:hover {
 .welcome p {
   width: 40vw;
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.7rem;
 }
 
@@ -288,8 +412,8 @@ nav ul li a:hover {
 }
 
 .homepage-part-two-container h4 {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 400;
   padding: 0.5rem 1rem;
 }
 
@@ -338,13 +462,13 @@ nav ul li a:hover {
   transition: 0.3s;
   text-decoration: none;
   color: black;
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1.3rem;
+  font-weight: 400;
   width: fit-content;
   margin: 1rem auto;
   padding: 0.5rem 2rem;
   box-shadow: 5px 5px #f7cc77;
-  border: black 1px solid;
+  border: #f7cc77 1px solid;
 }
 
 .seniors-list-container p:hover {
@@ -371,10 +495,10 @@ nav ul li a:hover {
 .senior-profile-container img {
   max-height: 60vh;
   box-shadow: #f7cc77 6px 6px;
-  margin:1rem 0
+  margin: 1rem 0;
 }
 
-.senior-profile-container h2{
+.senior-profile-container h2 {
   font-weight: 200;
   font-size: 2rem;
 }
@@ -382,7 +506,7 @@ nav ul li a:hover {
 .senior-profile-container h4 {
   font-weight: 200;
   font-size: 1.5rem;
-  margin: 1.5rem 0
+  margin: 1.5rem 0;
 }
 
 .senior-profile-need {
@@ -391,7 +515,7 @@ nav ul li a:hover {
   color: black;
   border: 1px solid #f7cc77;
   padding: 0.3rem 1rem;
-  margin: 1rem 0 
+  margin: 1rem 0;
 }
 
 .senior-profile-need a {
@@ -426,7 +550,7 @@ nav ul li a:hover {
   line-height: 2.5rem;
 }
 
-.about h4, 
+.about h4,
 .about h3 {
   font-size: 2rem;
   font-weight: 200;
@@ -435,13 +559,11 @@ nav ul li a:hover {
 
 /*  >>>>>>>>> USER PROFILE <<<<<<<<< */
 
-
-
 .seniors-container {
   display: flex;
   flex-direction: column;
   margin: 2rem;
-  align-items: center; 
+  align-items: center;
 }
 
 .single-senior {
@@ -452,11 +574,11 @@ nav ul li a:hover {
 }
 
 .single-senior div {
-    margin: 1rem;
-    text-align: start;
+  margin: 1rem;
+  text-align: start;
 }
 
-.single-senior img{
+.single-senior img {
   width: 20vw;
 }
 
@@ -491,9 +613,3 @@ nav ul li a:hover {
   justify-content: space-evenly;
   align-items: center;
 }
-
-
-
-
-
-

@@ -41,7 +41,7 @@ class AddNeed extends React.Component {
                 onChange={(e) => this.handleChange(e)}
               />
             </label>
-            <button className="form-button">Submit</button>
+            <button>Submit</button>
           </form>
         </div>
       );
