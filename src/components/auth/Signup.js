@@ -39,10 +39,10 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="center">
+        <h3>Sign up</h3>
         <form onSubmit={this.handleFormSubmit}>
-          <label>
-            Username:
+          <div className="txt-field">
             <input
               required
               type="text"
@@ -50,10 +50,10 @@ class Signup extends React.Component {
               value={this.state.username}
               onChange={this.handleChange}
             />
-          </label>
-
-          <label>
-            Password:
+            <span></span>
+            <label>Username:</label>
+          </div>
+          <div className="txt-field">
             <input
               required
               type="password"
@@ -61,15 +61,20 @@ class Signup extends React.Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
-          </label>
-          {this.state.message && <p className='error-msg'>{this.state.message}</p>}
-          <button type="submit"> Signup </button>
-        </form>
+            <span></span>
+            <label>Password:</label>
+          </div>
 
-        <p>
-          Already have an account?
-          <Link to={"/login"}> Login</Link>
-        </p>
+          {this.state.errorMsg && (
+            <p className="error-msg-auth">{this.state.errorMsg}</p>
+          )}
+          <button type="submit"> Sign up </button>
+
+          <div className="signup-link">
+            Already have an account?
+            <Link to={"/login"}>Login</Link>
+          </div>
+        </form>
       </div>
     );
   }

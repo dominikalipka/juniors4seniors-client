@@ -113,17 +113,17 @@ form {
 }
 
 label {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin: 0.5rem;
   font-weight: 200;
 }
 
 input {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 300;
   width: 30vw;
   margin: 0.5rem;
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid #a26360;
   border-radius: 2rem;
 }
@@ -151,19 +151,19 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #bdd1c5;
-  border: 5px solid #7b8e82;
+  border: 5px solid #f7cc77;
+  background: #f7cc7719;
   border-radius: 2rem;
 }
 
 .center h3 {
   margin-bottom: 0;
   font-size: 2.7rem;
-  color: white;
-  text-shadow: 3px 3px 2px #7b8e82;
+  color: #f7cc77;
+  text-shadow: 2px 2px 2px #000000cb;
   text-align: center;
   padding-bottom: 2rem;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #f7cc77;
 }
 
 .center form {
@@ -175,17 +175,17 @@ button:hover {
 .txt-field {
   width: 90%;
   position: relative;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid gray;
   margin: 1.5rem 0;
 }
 
 .txt-field input {
-  color: white;
-  font-weight: 400;
+  color: black;
+  font-weight: 300;
   width: 100%;
   padding: 0 0.5rem;
   height: 2rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   border: none;
   background: none;
   outline: none;
@@ -196,7 +196,7 @@ button:hover {
   top: 10%;
   left: 2%;
   text-align: start;
-  color: white;
+  color: gray;
   font-size: 1.5rem;
   font-weight: 400;
   pointer-events: none;
@@ -211,13 +211,13 @@ button:hover {
   width: 0%;
   transition: 0.3s;
   height: 0.1rem;
-  background: #7b8e82;
+  background: #f7cc77;
 }
 
 .txt-field input:focus ~ label,
 .txt-field input:valid ~ label {
   top: -75%;
-  color: #7b8e82;
+  color: #f7cc77;
 }
 
 .txt-field input:focus ~ span::before,
@@ -227,17 +227,15 @@ button:hover {
 
 .center button {
   width: 90%;
-    background: #7b8e82;
-    border: 3px solid #7b8e82;
-    color: white;
+  background: white;
+    color: black;
+    border: 3px solid #f7cc77;
+   
 
 }
 
 .center button:hover {
-    border: 3px solid #7b8e82;
-    color: black;
-    background: white;
-
+    background: #f7cc77;
 }
 
 .signup-link {
@@ -247,15 +245,9 @@ button:hover {
 
 .signup-link a {
   padding-left: 0.5rem;
-  text-decoration: underline white;
-  color: white;
+  text-decoration: underline #f7cc77;
+  color: #f7cc77;
   transition: 0.2s;
-}
-
-.signup-link a:hover {
-  transition: 0.2s;
-  color: white;
-  text-decoration: underline white;
 }
 
 /* >>>>>>>>>>>>>> NAVBAR <<<<<<<<<<<<<< */
