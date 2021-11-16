@@ -20,12 +20,15 @@ class SeniorProfile extends React.Component {
       })
       .catch((err) => {
         console.log(err);
-      });      
+      });  
+      
+      
   };
 
   assignUserToSenior = () => {
     console.log(this.props.currentUser);
     const helper = this.props.currentUser._id
+    console.log(this.props.currentUser._id);
 
     const { params } = this.props.match;
 
@@ -39,13 +42,27 @@ class SeniorProfile extends React.Component {
       .catch((err) => {
         console.log(err);
       });
+
   };
+
+  helperCheck = (senior) => {
+    const currentUserIsHelper = this.props.currentUser && (senior.helper === this.props.currentUser._id)
+
+    if (currentUserIsHelper) {
+      return (
+        <div>
+          <AddNeed theSenior={this.state} getSenior={this.getSenior} />{" "}
+        </div>
+      );
+    }
+  }
 
   componentDidMount() {
     this.getSenior();
   }
 
   render() {
+    
     return (
       <div>
         <div className="senior-profile-container">
@@ -83,9 +100,9 @@ class SeniorProfile extends React.Component {
                   </Link>
                 );
               })}
-            <div>
-              <AddNeed theSenior={this.state} getSenior={this.getSenior} />{" "}
-            </div>
+           
+              {this.helperCheck(this.state)}
+            
           </div>
         </div>
 
