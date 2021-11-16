@@ -12,7 +12,9 @@ class SeniorsList extends React.Component {
 
   getAllSeniors = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/seniors`)
+      .get(`${process.env.REACT_APP_API_URL}/seniors`, {
+        withCredentials: true,
+      })
       .then((seniorsFromAPI) => {
         this.setState({ seniorsList: seniorsFromAPI.data });
         console.log(seniorsFromAPI);

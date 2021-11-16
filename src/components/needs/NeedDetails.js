@@ -17,7 +17,8 @@ class NeedDetails extends React.Component {
 
     axios
       .get(
-        `${process.env.REACT_APP_API_URL}/seniors/${params.id}/needs/${params.needId}`
+        `${process.env.REACT_APP_API_URL}/seniors/${params.id}/needs/${params.needId}`,
+        { withCredentials: true }
       )
       .then((needFromAPI) => {
         const theNeed = needFromAPI.data;
@@ -41,7 +42,8 @@ class NeedDetails extends React.Component {
     const { params } = this.props.match;
     axios
       .delete(
-        `${process.env.REACT_APP_API_URL}/seniors/${params.id}/needs/${params.needId}`
+        `${process.env.REACT_APP_API_URL}/seniors/${params.id}/needs/${params.needId}`,
+        { withCredentials: true }
       )
       .then(() => {
         this.props.history.push(`/seniors/${params.id}`);

@@ -22,12 +22,16 @@ class AddSenior extends React.Component {
         const image = this.state.image
 
         axios
-          .post(`${process.env.REACT_APP_API_URL}/seniors`, {
-            name,
-            location,
-            contact,
-            image,
-          })
+          .post(
+            `${process.env.REACT_APP_API_URL}/seniors`,
+            {
+              name,
+              location,
+              contact,
+              image,
+            },
+            { withCredentials: true }
+          )
           .then(() => {
             this.props.getData();
             this.props.handleClickButton();

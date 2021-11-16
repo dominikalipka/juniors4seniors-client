@@ -23,7 +23,8 @@ class EditNeed extends React.Component {
         axios
           .put(
             `${process.env.REACT_APP_API_URL}/seniors/${params.id}/needs/${params.needId}`,
-            { title, description }
+            { title, description },
+            { withCredentials: true }
           )
           .then(() => {
             this.props.getData();
@@ -57,7 +58,7 @@ class EditNeed extends React.Component {
                   onChange={(e) => this.handleChange(e)}
                 />
               </label>
-              <button >Confirm changes</button>
+              <button className="form-button">Confirm changes</button>
             </form>
           </div>
         );

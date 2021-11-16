@@ -14,7 +14,9 @@ class UserProfile extends React.Component {
     const helper = this.props.currentUser._id;
     let seniorsAssignedtoUser = [];
     axios
-      .get(`${process.env.REACT_APP_API_URL}/seniors`)
+      .get(`${process.env.REACT_APP_API_URL}/seniors`, {
+        withCredentials: true,
+      })
       .then((seniorsFromAPI) => {
         let allSeniors = seniorsFromAPI.data;
         for (let i = 0; i < allSeniors.length; i++) {

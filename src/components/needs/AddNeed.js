@@ -41,7 +41,7 @@ class AddNeed extends React.Component {
                 onChange={(e) => this.handleChange(e)}
               />
             </label>
-            <button className="square-button-small">Submit</button>
+            <button className="form-button">Submit</button>
           </form>
         </div>
       );
@@ -59,11 +59,15 @@ class AddNeed extends React.Component {
       const description = this.state.description;
       const seniorId = this.props.theSenior._id;
       axios
-        .post(`${process.env.REACT_APP_API_URL}/needs`, {
-          title,
-          description,
-          seniorId,
-        })
+        .post(
+          `${process.env.REACT_APP_API_URL}/needs`,
+          {
+            title,
+            description,
+            seniorId,
+          },
+          { withCredentials: true }
+        )
         .then(() => {
           this.props.getSenior();
           this.setState({ title: "", description: "" });
