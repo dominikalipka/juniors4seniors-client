@@ -11,7 +11,7 @@ class SeniorProfile extends React.Component {
     const { params } = this.props.match;
 
     axios
-      .get(`http://localhost:5005/api/seniors/${params.id}`)
+      .get(`${process.env.REACT_APP_API_URL}/seniors/${params.id}`)
       .then((seniorFromAPI) => {
         const theSenior = seniorFromAPI.data;
         this.setState(theSenior);
@@ -28,7 +28,7 @@ class SeniorProfile extends React.Component {
     const { params } = this.props.match;
 
     axios
-      .put(`http://localhost:5005/api/seniors/${params.id}`, { helper })
+      .put(`${process.env.REACT_APP_API_URL}/seniors/${params.id}`, { helper })
       .then(() => this.getSenior())
       .catch((err) => {
         console.log(err);

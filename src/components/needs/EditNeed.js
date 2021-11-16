@@ -22,7 +22,7 @@ class EditNeed extends React.Component {
 
         axios
           .put(
-            `http://localhost:5005/api/seniors/${params.id}/needs/${params.needId}`,
+            `${process.env.REACT_APP_API_URL}/seniors/${params.id}/needs/${params.needId}`,
             { title, description }
           )
           .then(() => {

@@ -59,7 +59,7 @@ class AddNeed extends React.Component {
       const description = this.state.description;
       const seniorId = this.props.theSenior._id;
       axios
-        .post(`http://localhost:5005/api/needs`, {
+        .post(`${process.env.REACT_APP_API_URL}/needs`, {
           title,
           description,
           seniorId,
@@ -67,7 +67,7 @@ class AddNeed extends React.Component {
         .then(() => {
           this.props.getSenior();
           this.setState({ title: "", description: "" });
-          this.toggleForm()
+          this.toggleForm();
         })
         .catch((error) => console.log(error));
   } 

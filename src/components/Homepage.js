@@ -17,7 +17,7 @@ function Homepage () {
             <img src={oldWomenImg} alt="" />
           </div>
           <div className="welcome">
-            <h2>Welcome!!!!</h2>
+            <h2>Welcome!</h2>
             <p>
             <b>juniors4seniors</b> was created in order to connect seniors in need and people that want to provide help for those in need.
             </p>

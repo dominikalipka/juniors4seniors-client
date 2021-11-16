@@ -22,11 +22,11 @@ class AddSenior extends React.Component {
         const image = this.state.image
 
         axios
-          .post(`http://localhost:5005/api/seniors`, {
+          .post(`${process.env.REACT_APP_API_URL}/seniors`, {
             name,
             location,
             contact,
-            image
+            image,
           })
           .then(() => {
             this.props.getData();
@@ -35,7 +35,7 @@ class AddSenior extends React.Component {
               name: "",
               location: "",
               contact: "",
-              image: ''
+              image: "",
             });
           })
           .catch((error) => console.log(error));

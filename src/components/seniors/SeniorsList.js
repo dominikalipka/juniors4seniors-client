@@ -11,10 +11,12 @@ class SeniorsList extends React.Component {
   };
 
   getAllSeniors = () => {
-    axios.get(`http://localhost:5005/api/seniors`).then((seniorsFromAPI) => {
-      this.setState({ seniorsList: seniorsFromAPI.data,  });
-      console.log(seniorsFromAPI);
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/seniors`)
+      .then((seniorsFromAPI) => {
+        this.setState({ seniorsList: seniorsFromAPI.data });
+        console.log(seniorsFromAPI);
+      });
   };
 
   handleClickButton = () => {

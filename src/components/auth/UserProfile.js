@@ -14,7 +14,7 @@ class UserProfile extends React.Component {
     const helper = this.props.currentUser._id;
     let seniorsAssignedtoUser = [];
     axios
-      .get(`http://localhost:5005/api/seniors`)
+      .get(`${process.env.REACT_APP_API_URL}/seniors`)
       .then((seniorsFromAPI) => {
         let allSeniors = seniorsFromAPI.data;
         for (let i = 0; i < allSeniors.length; i++) {
@@ -24,7 +24,7 @@ class UserProfile extends React.Component {
         }
         this.setState({ usersSeniors: seniorsAssignedtoUser });
         console.log(this.props.currentUser);
-      })
+      });
   };
 
 //   getAllSeniors = () => {
