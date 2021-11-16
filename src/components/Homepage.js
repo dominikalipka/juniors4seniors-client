@@ -17,15 +17,12 @@ function Homepage () {
             <img src={oldWomenImg} alt="" />
           </div>
           <div className="welcome">
-            <h2>Welcome!</h2>
+            <h2>Welcome!!!!</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              sit amet tristique mi, vel congue diam. Curabitur ac rutrum magna,
-              quis mollis nisl. Phasellus porta, lacus lacinia cursus efficitur,
-              est sem commodo arcu, id porta urna nulla in risus. Vestibulum
-              vitae erat sit amet nisi dignissim fermentum. Sed at pharetra ex,
-              quis tristique neque. Integer lacinia non urna quis laoreet.{" "}
+            <b>juniors4seniors</b> was created in order to connect seniors in need and people that want to provide help for those in need.
             </p>
+            <p>All of us look after their relatives, but not every senior receives the help they need. Let's change that.</p>
+            <p>Join <b>juniors4seniors</b> and make world a better place today! </p>
 
             <Link style={{ textDecoration: "none" }} to="/signup">
               <button className="square-button">SIGN UP</button>
