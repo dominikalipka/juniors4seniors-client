@@ -27,6 +27,7 @@ class Signup extends React.Component {
           password: "",
         });
         this.props.getUser(response, true);
+        this.props.history.push("/seniors");
       })
       .catch((error) => {
            this.setState({

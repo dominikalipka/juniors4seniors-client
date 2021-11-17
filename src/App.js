@@ -68,7 +68,13 @@ class App extends React.Component {
           getUser={this.getTheUser}
         />
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Homepage {...props} userIsLoggedIn={this.state.isLoggedIn} />
+            )}
+          />
           <Route
             exact
             path="/signup"

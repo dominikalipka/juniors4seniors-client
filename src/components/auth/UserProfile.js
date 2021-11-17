@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 
 class UserProfile extends React.Component {
   state = {
-      usersSeniors: []
+    usersSeniors: [],
   };
-
-  
 
   getSeniors = () => {
     const helper = this.props.currentUser._id;
@@ -29,35 +27,34 @@ class UserProfile extends React.Component {
       });
   };
 
-//   getAllSeniors = () => {
-//     axios
-//       .get(`http://localhost:5005/api/seniors`)
-//       .then((seniorsFromAPI) => {
-//         return this.setState({ seniorsList: seniorsFromAPI.data });
-//       })
-//       .then(() => this.getSeniorsAssignedToUser());
-//   };
+  //   getAllSeniors = () => {
+  //     axios
+  //       .get(`http://localhost:5005/api/seniors`)
+  //       .then((seniorsFromAPI) => {
+  //         return this.setState({ seniorsList: seniorsFromAPI.data });
+  //       })
+  //       .then(() => this.getSeniorsAssignedToUser());
+  //   };
 
-//   getSeniorsAssignedToUser = () => {
-//     const helper = this.props.currentUser._id;
-//     let allSeniors = this.state.seniorsList;
-//     let seniorsAssignedtoUser = [];
+  //   getSeniorsAssignedToUser = () => {
+  //     const helper = this.props.currentUser._id;
+  //     let allSeniors = this.state.seniorsList;
+  //     let seniorsAssignedtoUser = [];
 
-//     for (let i = 0; i < allSeniors.length; i++) {
-//       if (allSeniors[i].helper === helper) {
-//         seniorsAssignedtoUser.push(allSeniors[i]);
-//       }
-//     }
-//     console.log(seniorsAssignedtoUser);
-//   };
+  //     for (let i = 0; i < allSeniors.length; i++) {
+  //       if (allSeniors[i].helper === helper) {
+  //         seniorsAssignedtoUser.push(allSeniors[i]);
+  //       }
+  //     }
+  //     console.log(seniorsAssignedtoUser);
+  //   };
 
-componentDidMount () {
-    this.getSeniors()
-}
+  componentDidMount() {
+    this.getSeniors();
+  }
 
   render() {
-
-    let username = this.props.currentUser.username
+    let username = this.props.currentUser.username;
     return (
       <div>
         <h2 className="webpage-title">
@@ -70,7 +67,7 @@ componentDidMount () {
               return (
                 <div className="single-senior" key={index}>
                   <div>
-                    <img src={senior.image} alt="" />
+                    <img src={senior.imageUrl} alt="" />
                   </div>
                   <div>
                     <h3>{senior.name}</h3>
