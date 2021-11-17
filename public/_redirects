@@ -1,1 +1,2 @@
 /*    /index.html   200
+/api/*  https://<server-url>:<server-port>/:splat 200
