@@ -3,11 +3,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import AddSenior from "./AddSenior";
+import SearchBar from "./SearchBar";
 
 class SeniorsList extends React.Component {
   state = {
     seniorsList: [],
     buttonForFormClicked: false,
+    searchInputState: "",
+  };
+
+  setSearchField = (searchInput) => {
+    this.setState({ searchInputState: searchInput });
   };
 
   getAllSeniors = () => {
@@ -31,9 +37,16 @@ class SeniorsList extends React.Component {
     this.getAllSeniors();
   }
   render() {
+    let filteredSeniors = this.state.seniorsList.filter((senior) => {
+      return senior.location
+        .toLowerCase()
+        .includes(this.state.searchInputState.toLowerCase());
+    });
+
     return (
       <div>
         <h2 className="webpage-title">Seniors in need</h2>
+
         <div>
           {this.props.userIsLoggedIn === true ? (
             <button
@@ -61,8 +74,12 @@ class SeniorsList extends React.Component {
             )}
           </div>
         </div>
+        <SearchBar
+          listOfSeniors={filteredSeniors}
+          setSearchField={this.setSearchField}
+        />
         <div className="seniors-list-container">
-          {this.state.seniorsList.map((senior) => {
+          {filteredSeniors.map((senior) => {
             return (
               <div key={senior._id}>
                 <img src={senior.imageUrl} alt="" />

@@ -76,7 +76,6 @@ class AddSenior extends React.Component {
   render() {
     return (
       <div>
-      {this.state.isUploading && <p className='error-msg'>Please wait, the image is being uploaded...</p>}
         <form onSubmit={this.handleFormSubmit}>
           <label>
             <input
@@ -110,13 +109,18 @@ class AddSenior extends React.Component {
           </label>
           <label>
             <input
+              className="file-upload"
               required
               type="file"
               onChange={(e) => this.handleFileUpload(e)}
             />
           </label>
-
-          <button className="square-button-small">SUBMIT</button>
+          {this.state.isUploading && (
+            <p className="error-msg">
+              Please wait, the image is being uploaded...
+            </p>
+          )}
+          <button>SUBMIT</button>
         </form>
       </div>
     );
