@@ -198,7 +198,7 @@ button:hover {
   text-align: start;
   color: gray;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
   pointer-events: none;
   transition: 0.3s;
 }
@@ -227,15 +227,16 @@ button:hover {
 
 .center button {
   width: 90%;
-  background: white;
+  background: #f7cc77;
     color: black;
-    border: 3px solid #f7cc77;
+    border: 2px solid #f7cc77;
    
 
 }
 
 .center button:hover {
     background: #f7cc77;
+    box-shadow: 3px 3px 3px gray;
 }
 
 .signup-link {
