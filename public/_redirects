@@ -1,2 +1,3 @@
 /*    /index.html   200
 /api/*  https://<server-url>:<server-port>/:splat 200
+/api/*  https://juniors4seniors.netlify.app:https://juniors4seniors.herokuapp.com/:splat 200
