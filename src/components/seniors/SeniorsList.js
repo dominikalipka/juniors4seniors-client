@@ -36,11 +36,18 @@ class SeniorsList extends React.Component {
         <h2 className="webpage-title">Seniors in need</h2>
         <div>
           {this.props.userIsLoggedIn === true ? (
-            <button className="form-button" onClick={this.handleClickButton}>
+            <button
+              className="form-button increase-bottom-margin"
+              onClick={this.handleClickButton}
+            >
               Add new senior
             </button>
           ) : (
-            <div><p className='error-msg'>In order to read more information about seniors, please log in.</p></div>
+            <div>
+              <p className="error-msg">
+                In order to read more information about seniors, please log in.
+              </p>
+            </div>
           )}
 
           <div>
@@ -58,7 +65,7 @@ class SeniorsList extends React.Component {
           {this.state.seniorsList.map((senior) => {
             return (
               <div key={senior._id}>
-                <img src={senior.image} alt="" />
+                <img src={senior.imageUrl} alt="" />
                 <h3>{senior.name}</h3>
                 <h4>{senior.location}</h4>
                 {this.props.userIsLoggedIn === true ? (
@@ -80,4 +87,4 @@ class SeniorsList extends React.Component {
   }
 }
 
-export default SeniorsList
+export default SeniorsList;

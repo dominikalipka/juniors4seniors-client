@@ -33,7 +33,7 @@ class App extends React.Component {
       authService
         .loggedin()
         .then((data) => {
-          console.log(data )
+          console.log(data);
           if (data) {
             this.setState({
               user: data,
@@ -45,7 +45,6 @@ class App extends React.Component {
               isLoggedIn: false,
             });
           }
-          
         })
         .catch((err) => {
           this.setState({
@@ -104,7 +103,6 @@ class App extends React.Component {
           ></Route>
           <Route exact path="/about" component={About}></Route>
         </Switch>
-        
       </div>
     );
   }

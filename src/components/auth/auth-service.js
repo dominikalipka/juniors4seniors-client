@@ -29,6 +29,12 @@ class AuthService {
     return this.service.post("/logout", {}).then((response) => response.data).catch((error) => console.log(error));
   };
 
+  handleUpload = file => {
+  return this.service
+    .post("/upload", file)
+    .then((res) => res.data)
+    .catch((error) => console.log(error));
+};
   
 }
 
