@@ -20,12 +20,12 @@ body {
   width: 50vw;
   font-size: 1.5rem;
   font-weight: 600;
-  background-color: tomato;
+  background-color: #f77777;
   padding: 0.5rem 1rem;
 }
 
 .error-msg-auth {
-  background: tomato;
+  background: #f77777;
   max-width: 30vw;
   color: white;
   font-size: 1.5rem;
@@ -49,6 +49,7 @@ body {
 }
 
 .form-button {
+  margin: 0;
   transition: 0.2s;
   font-size: 1.5rem;
   font-weight: 400;
@@ -106,7 +107,8 @@ button a {
 }
 
 form {
-  margin: 2rem;
+  margin: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +116,6 @@ form {
 
 label {
   font-size: 1.4rem;
-  margin: 0.5rem;
   font-weight: 200;
 }
 
@@ -129,6 +130,7 @@ input {
 }
 
 button {
+  margin: 0.5rem;
   background-color: white;
   font-size: 1rem;
   border: 1px solid #a26360;
@@ -140,7 +142,7 @@ button:hover {
 }
 
 .increase-bottom-margin {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* >>>>>>>>>>> SIGN UP & LOG IN<<<<<<<<<< */
@@ -648,6 +650,7 @@ input[type="file"] {
 
 .search-bar input{
   width: 30vw;
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  border: 1px solid #f7cc77;
+  border: 1px solid #a26360;
 }
