@@ -49,7 +49,41 @@ class SeniorProfile extends React.Component {
     if (currentUserIsHelper) {
       return (
         <div>
+          <div>
+            {this.state.needsList && this.state.needsList.length > 0 && (
+              <h4>Needs:</h4>
+            )}
+            {this.state.needsList &&
+              this.state.needsList.map((need, index) => {
+                return (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/seniors/${this.state._id}/needs/${need._id}`}
+                  >
+                    <div className="senior-profile-need" key={index}>
+                      {need.title}
+                    </div>
+                  </Link>
+                );
+              })}
+          </div>
           <AddNeed theSenior={this.state} getSenior={this.getSenior} />{" "}
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {this.state.needsList && this.state.needsList.length > 0 && (
+            <h4>Needs:</h4>
+          )}
+          {this.state.needsList &&
+            this.state.needsList.map((need, index) => {
+              return (
+                  <div className="senior-profile-need" key={index}>
+                    {need.title}
+                  </div>
+              );
+            })}
         </div>
       );
     }
@@ -81,22 +115,7 @@ class SeniorProfile extends React.Component {
 
             <h4>Location: {this.state.location}</h4>
             <h4>Contact: {this.state.contact}</h4>
-            {this.state.needsList && this.state.needsList.length > 0 && (
-              <h4>Needs:</h4>
-            )}
-            {this.state.needsList &&
-              this.state.needsList.map((need, index) => {
-                return (
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    to={`/seniors/${this.state._id}/needs/${need._id}`}
-                  >
-                    <div className="senior-profile-need" key={index}>
-                      {need.title}
-                    </div>
-                  </Link>
-                );
-              })}
+            
 
             {this.helperCheck(this.state)}
           </div>
