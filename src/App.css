@@ -710,6 +710,11 @@ input[type="file"] {
 /* >>>>>>>>> RESPONSIVE DESIGN <<<<<<<<<< */
 
 @media (max-width: 60rem) {
+
+input {
+  width: 90vw;
+}
+
   nav {
     align-items: center;
     flex-direction: column;
@@ -754,7 +759,7 @@ input[type="file"] {
   .about {
     flex-direction: column;
         align-items: center;
-        width: 100vw;
+        width: 80vw;
   }
   .about div {
     width: 80vw;
@@ -764,6 +769,10 @@ input[type="file"] {
   .about p {
     width: 80vw;
   }
+
+  .logo {
+  width: 8vw;
+}
 
   .center {
     width: 80vw;
@@ -781,6 +790,12 @@ input[type="file"] {
 }
 
 .senior-profile-container {
+  flex-direction: column;
+    align-items:center;
+    width: 90vw;
+}
+
+.senior-profile-container div {
   flex-direction: column;
     align-items:center;
 }
