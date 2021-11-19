@@ -1,4 +1,4 @@
-## juniors4seniors
+## juniors4seniors - full-stack web app
 
 <img width="300" alt="" src="./src/images/logo.png">
 
@@ -17,4 +17,4 @@ If you click "I want to help" in the profile of a particular senior you will be 
 
 # DEMO
 
-[Check out the demo here] (https://juniors4seniors.netlify.app)
+[Check out the demo here](https://juniors4seniors.netlify.app)
