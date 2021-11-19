@@ -10,6 +10,7 @@ import React from "react";
 import SeniorProfile from "./components/seniors/SeniorProfile";
 import NeedDetails from "./components/needs/NeedDetails";
 import UserProfile from "./components/auth/UserProfile";
+import AboutCreator from "./components/AboutCreator";
 
 import authService from "./components/auth/auth-service";
 import Signup from "./components/auth/Signup";
@@ -108,6 +109,7 @@ class App extends React.Component {
             )}
           ></Route>
           <Route exact path="/about" component={About}></Route>
+          <Route exact path="/about-creator" component={AboutCreator}></Route>
         </Switch>
       </div>
     );
