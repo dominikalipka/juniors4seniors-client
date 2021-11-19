@@ -705,3 +705,91 @@ input[type="file"] {
 .logo {
   width: 3vw;
 }
+
+
+/* >>>>>>>>> RESPONSIVE DESIGN <<<<<<<<<< */
+
+@media (max-width: 60rem) {
+  nav {
+    align-items: center;
+    flex-direction: column;
+  }
+  nav .logo {
+    display: inline;
+  }
+
+  /* nav ul {
+    flex-direction: column;
+  } */
+
+  nav ul li {
+    padding: 1rem 0
+  }
+
+  .homepage-part-one {
+    flex-direction: column;
+  }
+
+  .welcome p{
+    width: 90vw;
+  }
+
+    .homepage-part-one div {
+      width: 90vw;
+    }
+
+    .homepage-part-one div img {
+      max-width: 80vw;
+    }
+
+  .homepage-part-two > div{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage-part-two-container{
+    align-items: center;
+  }
+
+  .about {
+    flex-direction: column;
+        align-items: center;
+        width: 100vw;
+  }
+  .about div {
+    width: 80vw;
+  }
+
+  .about h4,
+  .about p {
+    width: 80vw;
+  }
+
+  .center {
+    width: 80vw;
+    position: absolute;
+    margin-top: 3rem;
+  }
+
+  .seniors-list-container {
+    flex-direction: column;
+    align-items:center;
+  }
+
+  .error-msg {
+    line-height: 3rem;
+  }
+
+}
+
+@media(max-width: 40rem) {
+    nav ul {
+    flex-direction: column;
+  }
+
+    .center {
+    width: 80vw;
+    position: absolute;
+    margin-top: 15rem;
+  }
+}
