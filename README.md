@@ -2,6 +2,8 @@
 
 <img width="300" alt="" src="./src/images/logo.png">
 
+# This repository is a frontend part of juniors4seniors web app.
+
 # About
 
 This website was created to help seniors in need.
