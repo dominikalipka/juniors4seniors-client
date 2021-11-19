@@ -24,7 +24,7 @@ class Homepage extends React.Component {
             need and people that want to provide help for those in need.
           </p>
           <p>
-            All of us look after their relatives, but not every senior receives
+            We all try to look after our relatives, but not every senior receives
             the help they need. Let's change that.
           </p>
           <p>
